@@ -665,7 +665,6 @@ class DebugClientOptions(OptionsWithOptionsFile):
         ["master", "m", None,
          "Location of the buildmaster's slaveport (host:port)"],
         ["passwd", "p", None, "Debug password to use"],
-        ["myoption", "O", "DEF", "My Option!"],
         ]
     buildbotOptions = [
         [ 'debugMaster', 'passwd' ],
@@ -679,10 +678,6 @@ class DebugClientOptions(OptionsWithOptionsFile):
             self['passwd'] = args[1]
         if len(args) > 2:
             raise usage.UsageError("I wasn't expecting so many arguments")
-
-    def postOptions(self):
-        print self['myoption']
-        sys.exit(1)
 
 def debugclient(config):
     from buildbot.clients import debug
