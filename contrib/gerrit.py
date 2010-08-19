@@ -323,7 +323,7 @@ class GerritStatusPush(StatusPush, _ExponentialBackoffMixin):
     what_unknown = "completed with an unknown result."
     verify_dict = {
         SUCCESS: "1",
-        FAILURE: "-1",
+        FAILURE: "0",
     }
     lastPushWasSuccessful = True
     
